@@ -30,7 +30,7 @@ public class BookInspector {
 		return b;
 	}
 
-	
+	//
 	  public static void output(ArrayList<Book> b) { 
 		 
 		  for (Book x : b)
