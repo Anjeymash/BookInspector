@@ -17,11 +17,8 @@ public class BookInspector {
 		Scanner in = new Scanner(new File("books.txt"));
 		Book mybook;
 		while (in.hasNext()) {
-			mybook = new Book();
 			str = in.nextLine().split(" ", 3);
-			mybook.setName(str[0]);
-			mybook.setAuthor(str[1]);
-			mybook.setAge(str[2]);
+			mybook = new Book(str[0], str[1], str[2]);
 			books.add(mybook);
 		}
 		in.close();
@@ -34,7 +31,6 @@ public class BookInspector {
 			System.out.println(x.getName() + " " + x.getAuthor() + " " + x.getAge());
 	}
 
-	
 	public static void findBook(String s) {
 		int i = 0;
 		for (Book x : books) {
@@ -47,19 +43,16 @@ public class BookInspector {
 			System.out.println("нет такой книги ");
 	}
 
+	public static void sortByName() {
+		Book temp;
+		for (int i = 0; i < books.size(); i++)
+			for (int j = 0; j < books.size() - 1; j++) {
+				if (books.get(j).getName().compareTo(books.get(j + 1).getName()) > 0) {
+					temp = books.get(j);
+					books.set(j, books.get(j + 1));
+					books.set((j + 1), temp);
+				}
+			}
 
-
-public static void sortByName() {
-	Book temp;
-	for (int i=0; i<books.size(); i++)
-		for (int j=0; j<books.size()-1; j++) {
-		if ( books.get(j).getName().compareTo (books.get(j+1).getName())>0)  {
-			temp = books.get(j);
-			books.set(j, books.get(j + 1));
-			books.set((j + 1), temp);
-		}
-		}
-			
 	}
 }
-

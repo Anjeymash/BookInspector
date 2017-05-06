@@ -7,15 +7,13 @@ public class Book {
 	private String author;
 	private String age;
 
-	public void Book(String name, String author, String age){
+	public Book(String name, String author, String age){
 	        this. name = name;
 	        this.author = author;
 	        this.age = age;
 
-
 	}
-	
-	
+		
 public String getName() {
 	return name;
 }
