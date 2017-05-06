@@ -2,20 +2,20 @@ package by.htp.main;
 
 
 import java.io.FileNotFoundException;
-import java.util.ArrayList;
 
 
-import by.htp.entity.Book;
 import by.htp.logic.BookInspector;
 
 public class MainBook {
 	  public static void main(String[] args) throws FileNotFoundException {
-          ArrayList<Book> books = new ArrayList<Book>();
-         BookInspector.initArrayListBook(books);
-         //BookInspector.output(books);
-         BookInspector.findBook("Java", books);
+         System.out.println("\n Несортированный список книг ");
+         BookInspector.initArrayListBook();
+         BookInspector.printArrayBook();
+         System.out.println("\n Поиск книги с названием Java");
+         BookInspector.findBook("Java");
+         System.out.println("\n Отсортированный список книг");
+         BookInspector.sortByName();
+         BookInspector.printArrayBook();
          }
 
-        
-
-}//
+     }

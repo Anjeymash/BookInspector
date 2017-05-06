@@ -1,3 +1,6 @@
 Java Shildt 2015
 C++ Cohen 2009
-Ruby Ekkel 2016  
+Ruby Eckel 2016  
+Java Eckel 2015
+Aava Eckel 2015
+Bava Eckel 2015
