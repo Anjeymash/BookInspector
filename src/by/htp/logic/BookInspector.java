@@ -3,9 +3,12 @@ package by.htp.logic;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.Scanner;
 
 import by.htp.entity.Book;
+
 
 public class BookInspector {
 
@@ -44,15 +47,19 @@ public class BookInspector {
 	}
 
 	public static void sortByName() {
-		Book temp;
-		for (int i = 0; i < books.size(); i++)
-			for (int j = 0; j < books.size() - 1; j++) {
-				if (books.get(j).getName().compareTo(books.get(j + 1).getName()) > 0) {
-					temp = books.get(j);
-					books.set(j, books.get(j + 1));
-					books.set((j + 1), temp);
-				}
-			}
-
+		Collections.sort(books, new BookSortByTitle());
 	}
+
+}
+
+class BookSortByTitle implements Comparator<Book> {
+
+	@Override
+	public int compare(Book o1, Book o2) {
+		String t1 = o1.getName();
+		String t2 = o2.getName();
+
+		return t1.compareTo(t2);
+	}
+
 }
